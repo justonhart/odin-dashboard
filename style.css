@@ -11,7 +11,7 @@ html, body{
 
 body{
 	display: grid;
-	grid-template-columns: 1fr 7fr;
+	grid-template-columns: 1fr 6fr 1.33fr;
 	grid-template-rows: 1fr 5fr;
 }
 
@@ -41,13 +41,47 @@ li + li{
 }
 
 #header{
+	padding: 12px;
+	grid-column: 2 / -1;
 	background-color:#ffffff;
 	box-shadow: 0 0 10px -5px;
 	z-index: 1;
 }
 
-#content{
+#projects{
+	display: flex;
+	gap: 1rem;
+	flex-direction: column;
+	padding: 12px;
 	background-color:#e1e1f0;
 	z-index: 0;
+}
+
+#projectContainer {
+	flex: 1;
+	display: grid;
+	grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+	gap: 20px;
+}
+
+.projectCard{
+	background-color: white;
+	border-radius: 16px;
+	padding: 16px;
+}
+
+#sidebar{
+	padding: 12px;
+	background-color:#e1e1f0;
+	z-index: 0;
+	display: flex;
+	flex-direction:column;
+	justify-content: space-between
+}
+
+#announcements, #trending{
+	flex: 1;
+	display: flex;
+	flex-direction: column;
 }
 
