@@ -1,3 +1,10 @@
+:root{
+	--primary: #6680ff;
+	--alt: #ffffff;
+	--background: #e1e1e9;
+	--shadow: 0 10px 3px -10px #b3b3b3;
+}
+
 *{
 	margin: 0;
 	padding: 0;
@@ -19,7 +26,7 @@ body{
 	padding: 12px;
 	grid-row: 1 / -1;
 	gap: 24px;
-	background-color:#6680ff;
+	background-color: var(--primary);
 	color: #ffffff;
 	display: flex;
 	flex-direction: column;
@@ -36,24 +43,33 @@ body{
 	font-size: 18pt;
 }
 
-li + li{
+#sidenav a{
+	color: white;
+	text-decoration: none;
+}
+
+#sidenav a:hover{
+	text-decoration: underline;
+}
+
+#sidenav li + li{
 	margin-top: 8px;
 }
 
 #header{
-	padding: 12px;
 	grid-column: 2 / -1;
-	background-color:#ffffff;
+	background-color: var(--alt);
 	box-shadow: 0 0 10px -5px;
 	z-index: 1;
+	display: grid;
+	grid-template: 1fr 1fr / 2fr 1fr;
 }
 
 #projects{
 	display: flex;
-	gap: 1rem;
 	flex-direction: column;
 	padding: 12px;
-	background-color:#e1e1f0;
+	background-color: var(--background);
 	z-index: 0;
 }
 
@@ -64,15 +80,16 @@ li + li{
 	gap: 20px;
 }
 
-.projectCard{
-	background-color: white;
+.card{
+	background-color: var(--alt);
 	border-radius: 16px;
 	padding: 16px;
+	box-shadow: 0 10px 3px -10px #b3b3b3;
 }
 
 #sidebar{
 	padding: 12px;
-	background-color:#e1e1f0;
+	background-color: var(--background);
 	z-index: 0;
 	display: flex;
 	flex-direction:column;
@@ -85,3 +102,72 @@ li + li{
 	flex-direction: column;
 }
 
+#sidebar ul{
+	padding: 0;
+	list-style-type: none;
+}
+
+#sidebar li{
+	padding: 12px;
+}
+
+#sidebar li+li{
+	border-top: solid 1px #cccccc ;
+}
+
+h2{
+	margin-bottom: 1rem;
+}
+
+#searchBar{
+	display: flex;
+	align-items: center;
+	gap: 1em;
+	padding: 1em;
+}
+
+#searchBar input{
+	flex: 1;
+	font-size: 1.5rem;
+	border: solid 1px #cccccc;
+	background-color:#e6e6e6 ;
+	border-radius: 16px;
+	padding: 1px 1rem;
+}
+
+#userTools{
+	padding: 1em;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	align-items: center;
+}
+
+#userName{
+	grid-column: -1 / -2;
+	font-weight: bold;
+}
+
+#appActions{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10%;
+	padding: 5%;
+	align-items: center;
+}
+
+#appActions button{
+	background-color: var(--primary);
+	color: white;
+	padding: .5rem;
+	font-weight: bold;
+	font-size: 16pt;
+	border-radius: 20px;
+	border: none;
+	box-shadow: var(--shadow);
+}
+
+#welcomeSplash{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
