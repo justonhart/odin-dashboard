@@ -1,5 +1,6 @@
 :root{
 	--primary: #6680ff;
+	--primary-hover: #6654ff; 
 	--alt: #ffffff;
 	--background: #e1e1e9;
 	--shadow: 0 10px 3px -10px #b3b3b3;
@@ -14,7 +15,6 @@ html, body{
 	height: 100%;
 	font-family: sans-serif;
 }
-
 
 body{
 	display: grid;
@@ -84,7 +84,7 @@ body{
 	background-color: var(--alt);
 	border-radius: 16px;
 	padding: 16px;
-	box-shadow: 0 10px 3px -10px #b3b3b3;
+	box-shadow: var(--shadow);
 }
 
 #sidebar{
@@ -130,7 +130,7 @@ h2{
 	flex: 1;
 	font-size: 1.5rem;
 	border: solid 1px #cccccc;
-	background-color:#e6e6e6 ;
+	background-color: var(--background);
 	border-radius: 16px;
 	padding: 1px 1rem;
 }
@@ -149,10 +149,10 @@ h2{
 
 #appActions{
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 10%;
+	grid-template-columns: repeat(3, auto);
 	padding: 5%;
 	align-items: center;
+	gap: 1rem;
 }
 
 #appActions button{
@@ -166,8 +166,39 @@ h2{
 	box-shadow: var(--shadow);
 }
 
+#appActions button:hover{
+	background-color: var(--primary-hover);
+}
+
 #welcomeSplash{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.projectActions{
+	list-style-type: none;
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	gap: 8px;
+	width: 100%;
+	justify-content: end;
+}
+
+.projectActions li{
+	border: 1px solid #cccccc;
+	border-radius: 8px;
+	background-color: white;
+	padding: .5rem;
+}
+
+.projectActions li:hover{
+	background-color: var(--background);
+	user-select: none;
+}
+
+.project{
+	display: grid;
+	gap: 1rem;
+	grid-template-rows: min-content auto min-content;
 }
